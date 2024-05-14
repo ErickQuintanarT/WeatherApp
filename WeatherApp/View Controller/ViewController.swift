@@ -24,7 +24,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var selectedUnit = "Imperial"
     var segmentSelected = 0
     
-    let defaultLocation = Location(lat: 34.0194704, lon: -118.4912273)
+    let defaultLocation = Location(lat: Constants.DefaultLocation.defaultLat, lon: Constants.DefaultLocation.defaultLon)
     var customLocation = Location(lat: 0, lon: 0)
     
     
