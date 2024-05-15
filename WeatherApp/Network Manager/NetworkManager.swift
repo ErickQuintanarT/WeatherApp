@@ -9,6 +9,7 @@ import Foundation
 
 public class NetworkManager: NetworkManagerProtocol {
     
+    //MARK: Fetch Image Data
     func fetchImageData(from url: URL, completion: @escaping (Result<Data, Error>) -> Void) { // Get Image data
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
@@ -23,6 +24,7 @@ public class NetworkManager: NetworkManagerProtocol {
         }.resume()
     }
     
+    //MARK: Fetch Weather Data
     func fetchWeatherData<T: Codable>(from url: URL, completion: @escaping (Result<T, Error>) -> Void) { // Get Weather Data
             URLSession.shared.dataTask(with: url) { data, response, error in
                 guard let data = data, error == nil else {

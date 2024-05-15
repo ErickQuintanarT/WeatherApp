@@ -27,7 +27,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let defaultLocation = Location(lat: Constants.DefaultLocation.defaultLat, lon: Constants.DefaultLocation.defaultLon)
     var customLocation = Location(lat: 0, lon: 0)
     
-    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -36,6 +35,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(_:)), name: settingsViewDelegate.notification, object: nil)
         
+        //Load View Controller with Empty Data
         cityName.text = "--"
         currentTemperature.text = "--°"
         shortDescription.text = "--"
@@ -77,9 +77,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             switch result {
             case .success(let data):
                 
-                print(data)
 //                DispatchQueue.main.async {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Delay on Dispath to Simulated Low Networt to see Activity Indicator
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Delay on Dispath to Simulated slow Networt to see Activity Indicator
 
                     self?.cityName.text = "\(data.name)"
                     self?.currentTemperature.text = "\(data.main.temp)°"

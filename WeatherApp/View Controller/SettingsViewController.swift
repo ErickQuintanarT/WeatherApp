@@ -13,17 +13,15 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var doneButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var segmentedView: UISegmentedControl!
-    //    let viewControllerDelegate = ViewController()
     
+    // Data for Picker View
     let pickerData = [["Fahrenheit - °F", "Celsius - °C", "Kelvin - K"]]
     let pickerValue = ["Imperial", "Metric", "Default"]
     var selectedRow = 0
     
     var segmentSelected = 0
     
-    let pickerNotification = Notification.Name("PassUnitNotification")
-    let segmentNofication = Notification.Name("PassLocationNotification")
-    
+    // Notification to pass data to the View Controller
     let notification = Notification.Name("PassLocationNotification")
     
     override func viewDidLoad() {
@@ -54,7 +52,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(row)
         selectedRow = row
     }
     

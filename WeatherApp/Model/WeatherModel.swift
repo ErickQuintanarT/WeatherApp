@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: Weather Model
 struct WeatherModel: Codable {
     let coord: Coord
     let weather: [Weather]
@@ -72,7 +73,7 @@ struct Sys: Codable {
 }
 
 
-// Example API Response
+//MARK: Example JSON API Response
 /*
  
  {

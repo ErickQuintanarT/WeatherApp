@@ -16,6 +16,7 @@ class WeatherViewModel {
         self.networkManager = networkManager
     }
     
+    //MARK: Calling Fetch Weather Data from Network Manager using a URL and some Data from the View Controller
     func fetchWeatherData(units: String, location: Location, completion: @escaping (Result<WeatherModel, Error>) -> Void) {
         
         let networkManager = NetworkManager()
@@ -29,6 +30,7 @@ class WeatherViewModel {
         networkManager.fetchWeatherData(from: url, completion: completion)
     }
     
+    //MARK: Calling Fetch Image Data from Network Manager using the Image Name from the Fetch Weather Data to display the image on the view controller
     func fetchImage(from imageName:String , completion: @escaping (Result<UIImage, Error>) -> Void) {
         
         let urlString = "https://openweathermap.org/img/wn/\(imageName)@2x.png"
